@@ -35,6 +35,7 @@ export interface ButtonOptions {
    */
   loadingText?: string
   /**
+
    * The html button type to use.
    */
   type?: "button" | "reset" | "submit"
@@ -92,7 +93,7 @@ export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
   } = omitThemingProps(props)
 
   /**
-   * When button is used within ButtonGroup (i.e. flushed with sibling buttons),
+   * When button is used within ButtonGroup (i.e flushed with sibling buttons),
    * it is important to add a `zIndex` on focus.
    *
    * So let's read the component styles and then add `zIndex` to it.
@@ -109,6 +110,7 @@ export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
       whiteSpace: "nowrap",
       verticalAlign: "middle",
       outline: "none",
+      width: "100%",
       ...styles,
       ...(!!group && { _focus }),
     }
@@ -131,6 +133,7 @@ export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
       {...rest}
     >
       {isLoading && spinnerPlacement === "start" && (
+        <chakra.span>
         <ButtonSpinner
           className="chakra-button__spinner--start"
           label={loadingText}
@@ -139,19 +142,19 @@ export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
         >
           {spinner}
         </ButtonSpinner>
+        </chakra.span>
       )}
 
       {isLoading ? (
         loadingText || (
-          <chakra.span opacity={0}>
+          <chakra.span>
             <ButtonContent {...contentProps} />
           </chakra.span>
         )
-      ) : (
-        <ButtonContent {...contentProps} />
-      )}
+      ) : <chakra.span><ButtonContent {...contentProps} /></chakra.span>}
 
       {isLoading && spinnerPlacement === "end" && (
+        <chakra.span>
         <ButtonSpinner
           className="chakra-button__spinner--end"
           label={loadingText}
@@ -160,6 +163,7 @@ export const Button = forwardRef<ButtonProps, "button">((props, ref) => {
         >
           {spinner}
         </ButtonSpinner>
+        </chakra.span>
       )}
     </chakra.button>
   )
@@ -178,10 +182,11 @@ function ButtonContent(props: ButtonContentProps) {
   const { leftIcon, rightIcon, children, iconSpacing } = props
   return (
     <>
-      {leftIcon && <ButtonIcon marginEnd={iconSpacing}>{leftIcon}</ButtonIcon>}
-      {children}
+      {leftIcon && <chakra.span>
+        <ButtonIcon marginEnd={iconSpacing}>{leftIcon}</ButtonIcon></chakra.span>}
+      <chakra.span>{children}</chakra.span>
       {rightIcon && (
-        <ButtonIcon marginStart={iconSpacing}>{rightIcon}</ButtonIcon>
+        <chakra.span><ButtonIcon marginStart={iconSpacing}>{rightIcon}</ButtonIcon></chakra.span>
       )}
     </>
   )
