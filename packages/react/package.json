@@ -1,6 +1,6 @@
 {
   "name": "@chakra-ui/react",
-  "version": "2.0.0-next.5",
+  "version": "2.0.0-next.6",
   "description": "Responsive and accessible React UI components built with React and Emotion",
   "main": "dist/chakra-ui-react.cjs.js",
   "module": "dist/chakra-ui-react.esm.js",
@@ -33,7 +33,7 @@
     "@chakra-ui/live-region": "2.0.0-next.2",
     "@chakra-ui/media-query": "3.0.0-next.2",
     "@chakra-ui/menu": "2.0.0-next.4",
-    "@chakra-ui/modal": "2.0.0-next.3",
+    "@chakra-ui/modal": "2.0.0-next.4",
     "@chakra-ui/number-input": "2.0.0-next.3",
     "@chakra-ui/pin-input": "2.0.0-next.3",
     "@chakra-ui/popover": "2.0.0-next.4",

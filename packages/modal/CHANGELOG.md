@@ -1,5 +1,14 @@
 # Change Log
 
+## 2.0.0-next.4
+
+### Patch Changes
+
+- [#5998](https://github.com/chakra-ui/chakra-ui/pull/5998)
+  [`1d5d7b712`](https://github.com/chakra-ui/chakra-ui/commit/1d5d7b712d5643c7abf58ab560278090c0f839c1)
+  Thanks [@TimKolberger](https://github.com/TimKolberger)! - Upgrade dependency
+  react-remove-scroll
+
 ## 2.0.0-next.3
 
 ### Major Changes

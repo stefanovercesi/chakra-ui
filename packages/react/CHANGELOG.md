@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.0.0-next.6
+
+### Patch Changes
+
+- Updated dependencies
+  [[`1d5d7b712`](https://github.com/chakra-ui/chakra-ui/commit/1d5d7b712d5643c7abf58ab560278090c0f839c1)]:
+  - @chakra-ui/modal@2.0.0-next.4
+
 ## 2.0.0-next.5
 
 ### Major Changes
